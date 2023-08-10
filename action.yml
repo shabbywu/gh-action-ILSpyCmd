@@ -1,0 +1,31 @@
+name: 'Container Action Template'
+description: 'Get started with Container actions'
+author: 'shabbywu'
+inputs:
+  files:
+    description: 'Newline-delimited assemblies paths that is being decompiled.'
+    required: true
+  output-dir:
+    description: 'The output directory, if omitted decompiler output is written to standard out.'
+    default: ''
+    required: false
+  project:
+    description: 'Decompile assembly as compilable project. This requires the output directory option.'
+    default: 'false'
+    required: false
+  nested-directories:
+    description: 'Use nested directories for namespaces.'
+    default: 'false'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - "--files"
+    - ${{ inputs.files }}
+    - "--output-dir"
+    - ${{ inputs.output-dir }}
+    - "--project"
+    - ${{ inputs.project }}
+    - "--nested-directories"
+    - ${{ inputs.nested-directories }}
