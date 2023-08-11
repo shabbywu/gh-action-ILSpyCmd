@@ -1,5 +1,5 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
+name: 'gh-action-ILSpyCmd'
+description: 'GitHub Action for decompiling C# Assembly files'
 author: 'shabbywu'
 inputs:
   files:
